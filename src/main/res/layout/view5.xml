@@ -6,8 +6,8 @@
     android:orientation="vertical">
 
     <fragment
-        android:id="@+id/fragment_view4"
-        android:name="com.example.group.fragment.View4Fragment"
+        android:id="@+id/fragment_view1"
+        android:name="com.example.group.fragment.View5Fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

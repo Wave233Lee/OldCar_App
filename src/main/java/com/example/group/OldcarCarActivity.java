@@ -6,20 +6,29 @@ import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.group.adapter.GridAdapter;
 import com.example.group.adapter.MyPagerAdapter;
+import com.example.group.bean.GoodsInfo;
 import com.example.group.util.Utils;
+import com.example.group.widget.SpacesItemDecoration;
+import com.example.group.widget.View1Activity;
 
 import java.util.ArrayList;
 
@@ -73,6 +82,17 @@ public class OldcarCarActivity extends AppCompatActivity implements View.OnClick
 		one = offset * 2 + bmpWidth;// 移动一页的偏移量,比如1->2,或者2->3
 		two = one * 2;// 移动两页的偏移量,比如1直接跳3
 		three = one * 3;
+
+		//往ViewPager填充View，同时设置点击事件与页面切换事件
+		listViews = new ArrayList<View>();
+		LayoutInflater mInflater = LayoutInflater.from(this);
+		listViews.add(mInflater.inflate(R.layout.view1, null, false));
+		listViews.add(mInflater.inflate(R.layout.view2, null,false));
+		listViews.add(mInflater.inflate(R.layout.view3, null, false));
+		listViews.add(mInflater.inflate(R.layout.view4, null, false));
+
+		vpager_four.setAdapter(new MyPagerAdapter(listViews));
+		vpager_four.setCurrentItem(0);
 
 		tv_one.setOnClickListener(this);
 		tv_two.setOnClickListener(this);
@@ -191,5 +211,19 @@ public class OldcarCarActivity extends AppCompatActivity implements View.OnClick
 			finish();
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void initGrid() {
+		RecyclerView rv_grid = (RecyclerView) findViewById(R.id.rv_grid);
+
+		GridLayoutManager manager = new GridLayoutManager(this, 5);
+		rv_grid.setLayoutManager(manager);
+
+		GridAdapter adapter = new GridAdapter(this, GoodsInfo.getDefaultGrid());
+		adapter.setOnItemClickListener(adapter);
+		adapter.setOnItemLongClickListener(adapter);
+		rv_grid.setAdapter(adapter);
+		rv_grid.setItemAnimator(new DefaultItemAnimator());
+		rv_grid.addItemDecoration(new SpacesItemDecoration(1));
 	}
 }

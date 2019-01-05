@@ -29,6 +29,8 @@
         <activity android:name=".widget.AdvActivity"/>
         <activity android:name=".widget.CarActivity"/>
         <activity android:name=".widget.View2Activity"/>
+        <activity android:name=".widget.BuyActivity"/>
+        <activity android:name=".widget.ReleaseActivity" android:theme="@style/AppCompatTheme"/>
     </application>
 
 </manifest>

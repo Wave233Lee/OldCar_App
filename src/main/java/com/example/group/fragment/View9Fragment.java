@@ -3,8 +3,6 @@ package com.example.group.fragment;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -20,11 +18,13 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.group.R;
 import com.example.group.util.HttpCallbackListener;
 import com.example.group.util.HttpUtil;
 import com.example.group.widget.CarActivity;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -32,6 +32,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import android.os.Handler;
@@ -91,20 +92,28 @@ public class View9Fragment extends Fragment implements AdapterView.OnItemClickLi
                 int code = jsonObject.getInt("code");
                 Log.d("a_log","code:  "+code);
                 if (code == 0){
-                    result = "登陆成功";
-                    Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
-                    JSONObject data = jsonObject.getJSONObject("data");
-
-                    String avatar_url = data.getJSONObject("avatar").getString("path");
-                    Log.d("a_log","传过来的"+avatar_url);
+                    Log.d("a_log", "data：" + jsonObject.toString());
+                    JSONArray data = jsonObject.getJSONArray("data");
+                    Log.d("a_log", "传过来的车标LOGO：" + jsonObject.toString());
+                    for(int i=0;i<data.length();i++){
+                        JSONObject temp = data.getJSONObject(i);
+                    }
+                    RequestOptions mRequestOptions = RequestOptions.circleCropTransform()
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)//不做磁盘缓存
+                            .skipMemoryCache(true);//不做内存缓存
+                    String test_url = data.getJSONObject(0).getJSONObject("picture").getString("path");
+                        Log.d("a_log", "传过来的车标LOGO：" + test_url);
                         Glide.with(image1)
-                                .load(avatar_url)
+                                .load(test_url)
+                                .apply(mRequestOptions)
                                 .into(image1);
-                        Log.d("tag", "loadImage: 链接");
+                        Log.d("a_log", "loadImage: 链接");
 
 
                 }else {
                     result = "获取失败";
+                    Log.d("a_log", "连接失败");
+
                     Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception e){
@@ -114,31 +123,13 @@ public class View9Fragment extends Fragment implements AdapterView.OnItemClickLi
     };
 
 
-    public static Bitmap getImage(String path){
-
-        try {
-            HttpURLConnection conn = (HttpURLConnection) new URL(path).openConnection();
-            conn.setConnectTimeout(5000);
-            conn.setRequestMethod("GET");
-            Log.d("a_log","链接的URL"+conn.getURL().toString());
-            if(conn.getResponseCode() == 200){
-                InputStream inputStream = conn.getInputStream();
-                Log.d("a_log","实际链接的"+inputStream.toString());
-                return BitmapFactory.decodeStream(inputStream);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public void getMessage(View v) {
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("id","1");
+//        params.put("id","1");
         try {
             //构造完整URL
-            String originAddress = "http://111.230.34.50:8080/oldcar/user/getById";
+            String originAddress = "http://111.230.34.50:8080/oldcar/carBrand/getAll";
             String completedURL = HttpUtil.makeURL(originAddress, params);
             Log.d("a_log","that's completedUrl:"+completedURL);
             //发送请求

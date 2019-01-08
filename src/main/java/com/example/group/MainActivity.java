@@ -53,7 +53,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		} else if (v == ll_third) {
 			toActivity("third", OldcarHomeActivity.class);
 		} else if (v == ll_four) {
-			toActivity("four", OldcarHomeActivity.class);
+			toActivity("four", FindCarActivity.class);
 		} else if (v == ll_five) {
 			toActivity("five", OldcarHomeActivity.class);
 		}

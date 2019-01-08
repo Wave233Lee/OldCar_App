@@ -22,6 +22,7 @@
         <activity android:name=".SearchViewActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarHomeActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarFindcarActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".FindCarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarCarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarSaleActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".SearchResultActvity" android:theme="@style/AppCompatTheme" />

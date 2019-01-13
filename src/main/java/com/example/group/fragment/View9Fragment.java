@@ -27,8 +27,10 @@ import com.example.group.widget.CarActivity;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,6 +48,7 @@ public class View9Fragment extends Fragment implements AdapterView.OnItemClickLi
     private ImageView image2;
     private SimpleAdapter adapter;
     private List<Map<String, Object>> dataList;
+    private List<Map<String, ?>> data;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();

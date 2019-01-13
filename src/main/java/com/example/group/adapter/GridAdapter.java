@@ -3,6 +3,7 @@ package com.example.group.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -15,10 +16,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.group.OldcarHomeActivity;
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.fragment.View1Frangment;
+import com.example.group.widget.HomeCarShow;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
+import com.example.group.widget.View1Activity;
 
 public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 		OnItemClickListener, OnItemLongClickListener {
@@ -109,9 +114,12 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 
 	@Override
 	public void onItemClick(View view, int position) {
-		String desc = String.format("您长按了第%d项，栏目名称是%s", position + 1,
-				mGoodsArray.get(position).title);
-		Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
+		switch (position){
+			case 0:
+				Intent intent=new Intent(this.mContext,HomeCarShow.class);
+				mContext.startActivity(intent);
+				break;
+		}
 
 	}
 

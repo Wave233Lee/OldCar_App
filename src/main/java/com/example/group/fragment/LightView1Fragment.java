@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FindCarView1Fragment extends Fragment implements AdapterView.OnItemClickListener {
+public class LightView1Fragment extends Fragment implements AdapterView.OnItemClickListener {
     protected View mView;
     protected Context mContext;
     private GridView gridView;
@@ -34,8 +34,8 @@ public class FindCarView1Fragment extends Fragment implements AdapterView.OnItem
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();
-        mView=inflater.inflate(R.layout.findcar_view1fragment,container,false);
-        initGrid();
+        mView=inflater.inflate(R.layout.lightview1fragment,container,false);
+    //    initGrid();
 //        gridView=(GridView) mView.findViewById(R.id.gridView);
 //        dataList=new ArrayList<Map<String,Object>>();
 //        adapter=new SimpleAdapter(this.mContext, getData(), R.layout.item_view1, new String[]{"pic","name"}, new int[]{R.id.pic,R.id.name});

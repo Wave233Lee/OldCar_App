@@ -22,6 +22,7 @@ import com.example.group.bean.GoodsInfo;
 import com.example.group.util.DateUtil;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
+import com.example.group.widget.View1Activity;
 
 public class CombineAdapter extends RecyclerView.Adapter<ViewHolder> implements
 		OnItemClickListener, OnItemLongClickListener {
@@ -114,7 +115,7 @@ public class CombineAdapter extends RecyclerView.Adapter<ViewHolder> implements
 
 	@Override
 	public void onItemClick(View view, int position) {
-		String desc = String.format("您长按了第%d项，推荐频道是%s", position + 1,
+		String desc = String.format("您按了一下第%d项，推荐频道是%s", position + 1,
 				mGoodsArray.get(position).title);
 		Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
 	}
@@ -124,6 +125,8 @@ public class CombineAdapter extends RecyclerView.Adapter<ViewHolder> implements
 		String desc = String.format("您长按了第%d项，推荐频道是%s", position + 1,
 				mGoodsArray.get(position).title);
 		Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(this.mContext,View1Activity.class);
+        mContext.startActivity(intent);
 	}
 
 }

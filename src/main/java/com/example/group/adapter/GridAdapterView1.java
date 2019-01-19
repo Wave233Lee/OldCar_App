@@ -117,6 +117,7 @@ public class GridAdapterView1 extends RecyclerView.Adapter<ViewHolder> implement
     public void onItemClick(View view, int position) {
         Intent intent=new Intent(this.mContext,View1Activity.class);
         mContext.startActivity(intent);
+
     }
 
     @Override

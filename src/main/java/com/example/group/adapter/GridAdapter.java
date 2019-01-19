@@ -3,6 +3,7 @@ package com.example.group.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -17,8 +18,12 @@ import android.widget.Toast;
 
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.widget.AccessoryActivity;
+import com.example.group.widget.CarActivity;
+import com.example.group.widget.ImportCarActivity;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
+import com.example.group.widget.RentCarActivity;
 
 public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 		OnItemClickListener, OnItemLongClickListener {
@@ -109,9 +114,20 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 
 	@Override
 	public void onItemClick(View view, int position) {
-		String desc = String.format("您长按了第%d项，栏目名称是%s", position + 1,
+		String desc = String.format("您按了一下第%d项，栏目名称是%s", position + 1,
 				mGoodsArray.get(position).title);
 		Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
+		if(position == 1){
+			Intent intent=new Intent(this.mContext,RentCarActivity.class);
+			mContext.startActivity(intent);
+		}else if(position == 3){
+			Intent intent=new Intent(this.mContext,AccessoryActivity.class);
+			mContext.startActivity(intent);
+		}else if(position == 7){
+			Intent intent=new Intent(this.mContext,ImportCarActivity.class);
+			mContext.startActivity(intent);
+		}
+
 
 	}
 

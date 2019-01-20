@@ -3,6 +3,7 @@ package com.example.group.adapter;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -17,8 +18,13 @@ import android.widget.Toast;
 
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
+import com.example.group.widget.AccessoryActivity;
+import com.example.group.widget.HomeCarCulture;
+import com.example.group.widget.HomeCarShow;
+import com.example.group.widget.ImportCarActivity;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
+import com.example.group.widget.RentCarActivity;
 
 public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 		OnItemClickListener, OnItemLongClickListener {
@@ -111,28 +117,26 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 	public void onItemClick(View view, int position) {
 		switch (position){
 			case 0:
-				Intent intent1=new Intent(this.mContext,HomeCarShow.class);
+				Intent intent1=new Intent(this.mContext, HomeCarShow.class);
 				mContext.startActivity(intent1);
 				break;
+			case 1:
+				Intent intent2=new Intent(this.mContext, RentCarActivity.class);
+				mContext.startActivity(intent2);
+				break;
 			case 2:
-				Intent intent3=new Intent(this.mContext,HomeCarCulture.class);
+				Intent intent3=new Intent(this.mContext, HomeCarCulture.class);
 				mContext.startActivity(intent3);
 				break;
-		}
-		String desc = String.format("您按了一下第%d项，栏目名称是%s", position + 1,
-				mGoodsArray.get(position).title);
-		Toast.makeText(mContext, desc, Toast.LENGTH_SHORT).show();
-		if(position == 1){
-			Intent intent=new Intent(this.mContext,RentCarActivity.class);
-			mContext.startActivity(intent);
-		}else if(position == 3){
-			Intent intent=new Intent(this.mContext,AccessoryActivity.class);
-			mContext.startActivity(intent);
-		}else if(position == 7){
-			Intent intent=new Intent(this.mContext,ImportCarActivity.class);
-			mContext.startActivity(intent);
-		}
+			case 3:
+				Intent intent4=new Intent(this.mContext, AccessoryActivity.class);
+				mContext.startActivity(intent4);
+				break;
+			case 7:
+				Intent intent8=new Intent(this.mContext, ImportCarActivity.class);
+				mContext.startActivity(intent8);
 
+		}
 
 	}
 

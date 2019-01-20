@@ -23,6 +23,7 @@ import com.example.group.R;
 import com.example.group.util.HttpCallbackListener;
 import com.example.group.util.HttpUtil;
 import com.example.group.widget.CarActivity;
+import com.example.group.widget.LightSystemActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -80,7 +81,7 @@ public class View9Fragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent(this.mContext,CarActivity.class);
+        Intent intent=new Intent(this.mContext,LightSystemActivity.class);
         mContext.startActivity(intent);
     }
 

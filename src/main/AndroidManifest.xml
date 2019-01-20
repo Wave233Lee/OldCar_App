@@ -30,9 +30,17 @@
         <activity android:name=".SearchResultActvity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".widget.View1Activity"/>
         <activity android:name=".widget.AdvActivity"/>
+        <activity android:name=".widget.AccessoryActivity"/>
         <activity android:name=".widget.CarActivity"/>
+        <activity android:name=".widget.CreditActivity"/>
+        <activity android:name=".widget.ImportCarActivity"/>
+        <activity android:name=".widget.ArticleActivity"/>
+        <activity android:name=".widget.DetailActivity"/>
         <activity android:name=".widget.View2Activity"/>
         <activity android:name=".widget.BuyActivity"/>
+        <activity android:name=".widget.RentCarActivity"/>
+        <activity android:name=".widget.LightSystemActivity"/>
+        <activity android:name=".widget.LightDetailActivity"/>
         <activity android:name=".widget.ReleaseActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.HomeCarShow" />
         <activity android:name=".widget.Text" android:theme="@style/AppCompatTheme">

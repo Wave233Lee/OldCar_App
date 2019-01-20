@@ -126,7 +126,7 @@
                 <!--android:background="#78edb6"-->
                 <!--android:orientation="vertical">-->
 
-                <!--<TextView-->
+                <!--<Text-->
                     <!--android:layout_width="match_parent"-->
                     <!--android:layout_height="wrap_content"-->
                     <!--android:text="百闻不如一见"-->
@@ -153,7 +153,7 @@
                                 <!--android:scaleType="fitXY"-->
                                 <!--android:src="@drawable/rq" />-->
 
-                            <!--<TextView-->
+                            <!--<Text-->
                                 <!--android:layout_width="match_parent"-->
                                 <!--android:layout_height="20dp"-->
                                 <!--android:text="人气榜"-->
@@ -172,7 +172,7 @@
                                 <!--android:scaleType="fitXY"-->
                                 <!--android:src="@drawable/good1" />-->
 
-                            <!--<TextView-->
+                            <!--<Text-->
                                 <!--android:layout_width="match_parent"-->
                                 <!--android:layout_height="20dp"-->
                                 <!--android:text="实力资深"-->
@@ -191,7 +191,7 @@
                                 <!--android:scaleType="fitXY"-->
                                 <!--android:src="@drawable/xinbang" />-->
 
-                            <!--<TextView-->
+                            <!--<Text-->
                                 <!--android:layout_width="match_parent"-->
                                 <!--android:layout_height="20dp"-->
                                 <!--android:text="新榜上线"-->

@@ -23,7 +23,7 @@ public class View6Fragmnt extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();
-        mView=inflater.inflate(R.layout.view5_fragment,container,false);
+        mView=inflater.inflate(R.layout.view6_fragment,container,false);
         planetList = Planet.getDefaultList();
         PlanetAdapter adapter = new PlanetAdapter(this.mContext, R.layout.item_list, planetList, Color.WHITE);
         lv_planet = (ListView) mView.findViewById(R.id.lv_planet);

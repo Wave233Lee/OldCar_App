@@ -205,18 +205,4 @@ public class ReleaseActivity extends AppCompatActivity implements View.OnClickLi
         Utils.setOverflowIconVisible(featureId, menu);
         return super.onMenuOpened(featureId, menu);
     }
-
-    private void initGrid() {
-        RecyclerView rv_grid = (RecyclerView) findViewById(R.id.rv_grid);
-
-        GridLayoutManager manager = new GridLayoutManager(this, 5);
-        rv_grid.setLayoutManager(manager);
-
-        GridAdapter adapter = new GridAdapter(this, GoodsInfo.getDefaultGrid());
-        adapter.setOnItemClickListener(adapter);
-        adapter.setOnItemLongClickListener(adapter);
-        rv_grid.setAdapter(adapter);
-        rv_grid.setItemAnimator(new DefaultItemAnimator());
-        rv_grid.addItemDecoration(new SpacesItemDecoration(1));
-    }
 }

@@ -12,9 +12,11 @@
     <color name="transparent">#00000000</color>
     <color name="blue">#0099ff</color>
     <color name="green">#00ff99</color>
+    <color name="lightblue">#c9d9d6</color>
     
     <color name="orange">#F9CC12</color>
     <color name="blue_light">#aaaaff</color>
     <color name="tab_text_selected">#0084e8</color>
     <color name="tab_text_normal">#7597b3</color>
+    <color name="cf0f2f7">#f0f2f7</color>
 </resources>

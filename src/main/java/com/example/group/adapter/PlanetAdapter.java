@@ -12,11 +12,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.group.R;
 import com.example.group.bean.Planet;
-import com.example.group.widget.CarActivity;
+import com.example.group.widget.Text;
 
 import java.util.ArrayList;
 
@@ -83,13 +82,13 @@ public class PlanetAdapter extends BaseAdapter implements OnItemClickListener,
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent(this.mContext,CarActivity.class);
+        Intent intent = new Intent(this.mContext, Text.class);
         mContext.startActivity(intent);
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent(this.mContext,CarActivity.class);
+        Intent intent = new Intent(this.mContext, Text.class);
         mContext.startActivity(intent);
         return true;
     }

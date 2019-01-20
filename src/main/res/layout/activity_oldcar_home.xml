@@ -81,6 +81,7 @@
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_grid"
+                android:background="@color/lightblue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

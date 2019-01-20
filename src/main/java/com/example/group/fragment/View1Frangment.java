@@ -49,7 +49,7 @@ public class View1Frangment extends Fragment implements AdapterView.OnItemClickL
     private RecyclerView recyclerView;
     private ArrayList<GoodInfo1> birdList;
     private DataAdapter adapter1;
-    private String imageUrls[]=new String[10];
+    private String imageUrls[]=new String[9];
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();
@@ -98,11 +98,14 @@ public class View1Frangment extends Fragment implements AdapterView.OnItemClickL
                             .skipMemoryCache(true);//不做内存缓存
 
 
-                    for (int i=0;i<10;i++){
+                    for (int i=0;i<9;i++){
                         String test_url = data.getJSONObject(i).getJSONObject("picture").getString("path");
                         imageUrls[i]=test_url;
                     Log.d("a_log", "传过来的车标LOGO111：" + imageUrls[i]);
                     }
+
+                    birdList=initData();
+                    adapter1.setDatas(birdList);
 
 
                 }else {
@@ -164,11 +167,8 @@ public class View1Frangment extends Fragment implements AdapterView.OnItemClickL
 
     private ArrayList<GoodInfo1> initData() {
         ArrayList<GoodInfo1> birds = new ArrayList<>();
-        for (int i=0;i<10;i++){
-            imageUrls[i]="http://111.230.34.50:8080/oldcar/img/carBrand/Audi.jpg";
-        }
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < imageUrls.length; i++) {
             GoodInfo1 bird = new GoodInfo1();
             Log.d("a_log", "传过来的车标LOGO2：" + imageUrls[i]);
             bird.setImageUrl(imageUrls[i]);

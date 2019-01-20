@@ -20,6 +20,7 @@ import com.example.group.OldcarHomeActivity;
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
 import com.example.group.fragment.View1Frangment;
+import com.example.group.widget.HomeCarCulture;
 import com.example.group.widget.HomeCarShow;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
@@ -116,8 +117,12 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 	public void onItemClick(View view, int position) {
 		switch (position){
 			case 0:
-				Intent intent=new Intent(this.mContext,HomeCarShow.class);
-				mContext.startActivity(intent);
+				Intent intent1=new Intent(this.mContext,HomeCarShow.class);
+				mContext.startActivity(intent1);
+				break;
+			case 2:
+				Intent intent3=new Intent(this.mContext,HomeCarCulture.class);
+				mContext.startActivity(intent3);
 				break;
 		}
 

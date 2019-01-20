@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.group.R;
-import com.example.group.adapter.PlanetAdapter;
+import com.example.group.adapter.PlanetAdapter1;
 import com.example.group.bean.Planet;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ public class View8Fragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();
-        mView=inflater.inflate(R.layout.view5_fragment,container,false);
+        mView=inflater.inflate(R.layout.view8_fragment,container,false);
         planetList = Planet.getDefaultList();
-        PlanetAdapter adapter = new PlanetAdapter(this.mContext, R.layout.item_list, planetList, Color.WHITE);
+        PlanetAdapter1 adapter = new PlanetAdapter1(this.mContext, R.layout.item_list, planetList, Color.WHITE);
         lv_planet = (ListView) mView.findViewById(R.id.lv_planet);
         lv_planet.setAdapter(adapter);
         lv_planet.setOnItemClickListener(adapter);

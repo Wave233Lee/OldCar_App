@@ -63,6 +63,8 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
     //视频缓存
     implementation 'com.danikula:videocache:2.7.1'
+    //图片控件
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
 
 repositories {

@@ -42,29 +42,19 @@
         <activity android:name=".widget.RentCarActivity"/>
         <activity android:name=".widget.LightSystemActivity"/>
         <activity android:name=".widget.LightDetailActivity"/>
+        <activity android:name=".widget.Activity_redcard"/>
+        <activity android:name=".widget.Activity_setup"/>
+        <activity android:name=".widget.FocusActivity" android:launchMode="standard"/>
         <activity android:name=".widget.ReleaseActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.HomeCarShow" />
-        <activity android:name=".widget.Text" android:theme="@style/AppCompatTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".widget.HomeCarCulture" android:theme="@style/AppCompatTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".widget.Video" android:theme="@style/AppCompatTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".widget.Text" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".widget.HomeCarCulture" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".widget.Video" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".widget.CollectionActivity"/>
+        <activity android:name=".widget.HistoryActivity"/>
+        <activity android:name=".widget.IntegrationActivity"/>
+        <activity android:name=".widget.PraiseActivity"/>
+        <activity android:name=".widget.MyOrderActivity"/>
 
     </application>
 

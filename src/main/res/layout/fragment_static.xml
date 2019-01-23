@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#bbffbb"
-    android:orientation="horizontal">
-
-    <TextView
-        android:id="@+id/tv_adv"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="广告"
-        android:textColor="#000000"
-        android:textSize="17sp" />
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/iv_adv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:src="@drawable/banner_1" />
 
 </LinearLayout>

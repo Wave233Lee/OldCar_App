@@ -56,6 +56,9 @@
         <activity android:name=".widget.PraiseActivity"/>
         <activity android:name=".widget.MyOrderActivity"/>
         <activity android:name=".widget.HomeCarMaintenance" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".widget.AddCar"/>
+        <activity android:name=".widget.CloseMaintenance" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".widget.OriginalMaintenance" android:theme="@style/AppCompatTheme"/>
 
     </application>
 

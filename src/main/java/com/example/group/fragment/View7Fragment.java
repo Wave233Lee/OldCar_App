@@ -47,8 +47,8 @@ public class View7Fragment extends Fragment {
         ButterKnife.bind(this,mView);
 
         urlList = new ArrayList<>();
-        urlList.add("https://ip4241946660.mobgslb.tbcache.com/youku/6773C29A5F039716F67852448/03000801005C3F0A0C6E34B003E880FAB4F6BE-B031-456D-A02A-20D2E095B9C6.mp4?sid=054788512983518352426_00_Ae1eea41461b277798155c29d758baa9e&sign=b1b90681af688b012f74577d67905894&ctype=50&hd=1&ali_redirect_domain=vali.cp31.ott.cibntv.net&ali_redirect_ex_ftag=7851028d6a752c25afe496eda34384a70c50dc4c278a94c5&ali_redirect_ex_tmining_ts=1547885435&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=11");
-        urlList.add("https://ip4241946660.mobgslb.tbcache.com/youku/6773C29A5F039716F67852448/03000801005C3F0A0C6E34B003E880FAB4F6BE-B031-456D-A02A-20D2E095B9C6.mp4?sid=054788512983518352426_00_Ae1eea41461b277798155c29d758baa9e&sign=b1b90681af688b012f74577d67905894&ctype=50&hd=1&ali_redirect_domain=vali.cp31.ott.cibntv.net&ali_redirect_ex_ftag=7851028d6a752c25afe496eda34384a70c50dc4c278a94c5&ali_redirect_ex_tmining_ts=1547885435&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=11");
+        urlList.add("http://111.230.34.50:8080/oldcar/img/output.mp4");
+        urlList.add("http://111.230.34.50:8080/oldcar/img/output.mp4");
         urlList.add("http://111.230.34.50:8080/oldcar/img/test.mp4");
         urlList.add("http://111.230.34.50:8080/oldcar/img/test.mp4");
         urlList.add("http://image.38.hn/public/attachment/201803/100651/201803150920130302.mp4");

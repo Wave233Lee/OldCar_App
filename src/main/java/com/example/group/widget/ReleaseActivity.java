@@ -53,6 +53,12 @@ public class ReleaseActivity extends AppCompatActivity implements View.OnClickLi
         Toolbar tl_head = (Toolbar) findViewById(R.id.tl_head);
         tl_head.setTitle("我要发布");
         setSupportActionBar(tl_head);
+        tl_head.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         initViews();
     }
 

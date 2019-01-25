@@ -27,6 +27,7 @@ import com.example.group.widget.ImportCarActivity;
 import com.example.group.widget.PeripheryActivity;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;
 import com.example.group.widget.RecyclerExtras.OnItemLongClickListener;
+import com.example.group.widget.ReleaseActivity;
 import com.example.group.widget.RentCarActivity;
 
 public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
@@ -134,6 +135,10 @@ public class GridAdapter extends RecyclerView.Adapter<ViewHolder> implements
 			case 3:
 				Intent intent4=new Intent(this.mContext, AccessoryActivity.class);
 				mContext.startActivity(intent4);
+				break;
+			case 4:
+				Intent intent5=new Intent(this.mContext, ReleaseActivity.class);
+				mContext.startActivity(intent5);
 				break;
 			case 5:
 				Intent intent6=new Intent(this.mContext, PeripheryActivity.class);

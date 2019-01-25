@@ -2,12 +2,12 @@
     android:id="@+id/ll_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/lightblue"
+    android:layout_margin="10dp"
     android:orientation="vertical" >
 
     <ImageView
         android:id="@+id/iv_pic"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="30dp"
         android:scaleType="fitCenter" />
 
@@ -16,8 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:fontFamily="@font/msyh"
-        android:textSize="17sp" />
+        android:textSize="13sp" />
 
 </LinearLayout>

@@ -1,8 +1,11 @@
 package com.example.group;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,6 +14,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.LinearLayout.LayoutParams;
 
@@ -20,25 +29,63 @@ import com.example.group.bean.GoodsInfo;
 import com.example.group.util.DisplayUtil;
 import com.example.group.util.Utils;
 import com.example.group.widget.BannerPager;
+import com.example.group.widget.CarActivity;
 import com.example.group.widget.SpacesItemDecoration;
 import com.example.group.widget.BannerPager.BannerClickListener;
+import com.sunfusheng.marqueeview.MarqueeView;
 
-public class OldcarHomeActivity extends AppCompatActivity implements BannerClickListener  {
+public class OldcarHomeActivity extends AppCompatActivity implements BannerClickListener, View.OnClickListener {
 	private final static String TAG = "OldcarHomeActivity";
+	private Button bt1;
+	private Button bt2;
+	private Button bt3;
+	private Button bt4;
+	private Button bt5;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_oldcar_home);
 		Toolbar tl_head = (Toolbar) findViewById(R.id.tl_head);
-		tl_head.setTitle("老爷车");
+		tl_head.setTitle(" ");
 		setSupportActionBar(tl_head);
 		initBanner();
 		initGrid();
+		bt1=findViewById(R.id.bt1);
+		bt2=findViewById(R.id.bt2);
+		bt3=findViewById(R.id.bt3);
+		bt4=findViewById(R.id.bt4);
+		bt5=findViewById(R.id.bt5);
+		bt1.setOnClickListener(this);
+		bt2.setOnClickListener(this);
+		bt3.setOnClickListener(this);
+		bt4.setOnClickListener(this);
+		bt5.setOnClickListener(this);
+		MarqueeView marqueeView = (MarqueeView) findViewById(R.id.marqueeView);
+		List<String> info = new ArrayList<>();
+		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
+		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
+		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
+		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
+		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
+		marqueeView.startWithList(info);
+		marqueeView.startWithList(info, R.anim.anim_bottom_in, R.anim.anim_top_out);
+		marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
+			@Override
+			public void onItemClick(int position, TextView textView) {
+
+			}
+		});
 		initCombine();
 		initCombine1();
 	}
-	
+
+	@Override
+	public void onClick(View v) {
+		Intent intent=new Intent(this, CarActivity.class);
+		startActivity(intent);
+	}
+
 	private void initBanner() {
 		BannerPager banner = (BannerPager) findViewById(R.id.banner_pager);
 		LayoutParams params = (LayoutParams) banner.getLayoutParams();
@@ -58,8 +105,8 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 
 	@Override
 	public void onBannerClick(int position) {
-		String desc = String.format("您点击了第%d张图片", position+1);
-		Toast.makeText(this, desc, Toast.LENGTH_LONG).show();
+		Intent intent=new Intent(this, CarActivity.class);
+		startActivity(intent);
 	}
 
 	private void initGrid() {
@@ -150,4 +197,5 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 }

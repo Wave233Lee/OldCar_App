@@ -2,6 +2,7 @@ package com.example.group;
 
 import android.app.ActivityGroup;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +24,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		ll_third = (LinearLayout) findViewById(R.id.ll_third);
 		ll_four = (LinearLayout) findViewById(R.id.ll_four);
 		ll_five = (LinearLayout) findViewById(R.id.ll_five);
+
 		ll_first.setOnClickListener(this);
 		ll_second.setOnClickListener(this);
 		ll_third.setOnClickListener(this);

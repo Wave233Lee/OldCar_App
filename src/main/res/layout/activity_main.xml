@@ -14,6 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/tabbar_height"
+        android:background="#FF04251F"
         android:orientation="horizontal" >
 
         <LinearLayout
@@ -21,6 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#FF04251F"
             android:orientation="vertical" >
 
             <TextView
@@ -64,7 +66,7 @@
 
             <TextView
                 style="@style/TabButton"
-                android:drawableTop="@drawable/tab_third_selector"
+                android:drawableTop="@drawable/tab_four_selector"
                 android:text="@string/menu_four" />
 
         </LinearLayout>

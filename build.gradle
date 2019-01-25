@@ -65,6 +65,7 @@ dependencies {
     implementation 'com.danikula:videocache:2.7.1'
     //图片控件
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.sunfusheng:marqueeview:1.3.3'
 }
 
 repositories {

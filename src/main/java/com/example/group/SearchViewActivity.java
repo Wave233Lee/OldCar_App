@@ -6,6 +6,7 @@ import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -40,7 +42,11 @@ public class SearchViewActivity extends AppCompatActivity  {
 		MenuItem menuItem = menu.findItem(R.id.menu_search);
 		SearchView searchView = (SearchView) menuItem.getActionView();
 			SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-			ComponentName cn = new ComponentName(this, SearchResultActvity.class);
+			ComponentName cn = new ComponentName(this, SearchResult1Activity.class);
+			Intent intent = new Intent();
+			//设置部件
+			intent.setComponent(cn);
+			startActivity(intent);
 			SearchableInfo info = searchManager.getSearchableInfo(cn);
 			if (info == null) {
 				Log.d(TAG, "Fail to get SearchResultActvity.");
@@ -54,7 +60,8 @@ public class SearchViewActivity extends AppCompatActivity  {
 			searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 				@Override
 				public boolean onQueryTextSubmit(String query) {
-					return false;
+					Log.d(TAG, "onQueryTextSubmit = " + query);
+					return true;
 				}
 
 				@Override

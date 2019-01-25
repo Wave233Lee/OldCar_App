@@ -19,4 +19,5 @@
     <color name="tab_text_selected">#0084e8</color>
     <color name="tab_text_normal">#7597b3</color>
     <color name="cf0f2f7">#f0f2f7</color>
+    <color name="colorBackground">#f1f0f6</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.group.widget;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,28 +21,25 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.group.R;
-import com.example.group.SearchViewActivity;
 import com.example.group.adapter.GridAdapter;
 import com.example.group.adapter.MyPagerAdapter;
 import com.example.group.bean.GoodsInfo;
-import com.example.group.util.Utils;
 
 import java.util.ArrayList;
 
-
-public class DetailActivity extends AppCompatActivity implements View.OnClickListener,
+public class ClubActivity extends AppCompatActivity implements View.OnClickListener,
         ViewPager.OnPageChangeListener {
 
+    private TextView tv_search_result;
     private ViewPager vpager_four;
     private ImageView img_cursor;
     private TextView tv_one;
     private TextView tv_two;
     private TextView tv_three;
     private TextView tv_four;
-
+    private TextView tv_five;
 
     private ArrayList<View> listViews;
     private int offset = 0;//移动条图片的偏移量
@@ -49,21 +48,37 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     private int one = 0; //移动条滑动一页的距离
     private int two = 0; //滑动条移动两页的距离
     private int three = 0;
+    private int four = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_club);
         initViews();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_null, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void initViews() {
         vpager_four = (ViewPager) findViewById(R.id.vpager_four);
         tv_one = (TextView) findViewById(R.id.tv_one);
         tv_two = (TextView) findViewById(R.id.tv_two);
         tv_three = (TextView) findViewById(R.id.tv_three);
-        tv_four = (TextView) findViewById(R.id.tv_four);
+        tv_four = findViewById(R.id.tv_four);
+        tv_five = findViewById(R.id.tv_five);
         img_cursor = (ImageView) findViewById(R.id.img_cursor);
 
         //下划线动画的相关设置：
@@ -78,16 +93,17 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         //移动的距离
         one = offset * 2 + bmpWidth;// 移动一页的偏移量,比如1->2,或者2->3
         two = one * 2;// 移动两页的偏移量,比如1直接跳3
-        three = one * 3;// 移动两页的偏移量,比如1直接跳4
+        three = one * 3;
+        four = one * 4;
 
         //往ViewPager填充View，同时设置点击事件与页面切换事件
         listViews = new ArrayList<View>();
         LayoutInflater mInflater = LayoutInflater.from(this);
-        listViews.add(mInflater.inflate(R.layout.detail_view1, null, false));
-        listViews.add(mInflater.inflate(R.layout.detail_view2, null, false));
-        listViews.add(mInflater.inflate(R.layout.detail_view3, null, false));
-        listViews.add(mInflater.inflate(R.layout.detail_view4, null, false));
-
+        listViews.add(mInflater.inflate(R.layout.club_view, null, false));
+        listViews.add(mInflater.inflate(R.layout.searchresult_view2, null, false));
+        listViews.add(mInflater.inflate(R.layout.searchresult_view3, null, false));
+        listViews.add(mInflater.inflate(R.layout.searchresult_view4, null, false));
+        listViews.add(mInflater.inflate(R.layout.searchresult_view5, null, false));
 
         vpager_four.setAdapter(new MyPagerAdapter(listViews));
         vpager_four.setCurrentItem(0);
@@ -96,6 +112,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         tv_two.setOnClickListener(this);
         tv_three.setOnClickListener(this);
         tv_four.setOnClickListener(this);
+        tv_five.setOnClickListener(this);
+
 
         vpager_four.addOnPageChangeListener(this);
     }
@@ -115,6 +133,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.tv_four:
                 vpager_four.setCurrentItem(3);
                 break;
+            case R.id.tv_five:
+                vpager_four.setCurrentItem(4);
+                break;
+
         }
     }
 
@@ -129,6 +151,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                     animation = new TranslateAnimation(two, 0, 0, 0);
                 } else if (currIndex == 3) {
                     animation = new TranslateAnimation(three, 0, 0, 0);
+                } else if (currIndex == 4) {
+                    animation = new TranslateAnimation(four, 0, 0, 0);
                 }
                 break;
             case 1:
@@ -138,6 +162,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                     animation = new TranslateAnimation(two, one, 0, 0);
                 } else if (currIndex == 3) {
                     animation = new TranslateAnimation(three, one, 0, 0);
+                } else if (currIndex == 4) {
+                    animation = new TranslateAnimation(four, one, 0, 0);
                 }
                 break;
             case 2:
@@ -147,6 +173,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                     animation = new TranslateAnimation(one, two, 0, 0);
                 } else if (currIndex == 3) {
                     animation = new TranslateAnimation(three, two, 0, 0);
+                } else if (currIndex == 4) {
+                    animation = new TranslateAnimation(four, two, 0, 0);
                 }
                 break;
             case 3:
@@ -154,8 +182,21 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                     animation = new TranslateAnimation(offset, three, 0, 0);
                 } else if (currIndex == 1) {
                     animation = new TranslateAnimation(one, three, 0, 0);
-                }else if (currIndex == 2) {
+                } else if (currIndex == 2) {
                     animation = new TranslateAnimation(two, three, 0, 0);
+                } else if (currIndex == 4) {
+                    animation = new TranslateAnimation(four, three, 0, 0);
+                }
+                break;
+            case 4:
+                if (currIndex == 0) {
+                    animation = new TranslateAnimation(offset, four, 0, 0);
+                } else if (currIndex == 1) {
+                    animation = new TranslateAnimation(one, four, 0, 0);
+                } else if (currIndex == 2) {
+                    animation = new TranslateAnimation(two, four, 0, 0);
+                } else if (currIndex == 3) {
+                    animation = new TranslateAnimation(four, four, 0, 0);
                 }
                 break;
         }
@@ -174,40 +215,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     public void onPageScrolled(int i, float v, int i1) {
 
     }
-
-    @Override
-    public boolean onMenuOpened(int featureId, Menu menu) {
-        // 显示菜单项左侧的图标
-        Utils.setOverflowIconVisible(featureId, menu);
-        return super.onMenuOpened(featureId, menu);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_home, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            finish();
-        } else if (id == R.id.menu_search) {
-            Intent intent = new Intent(this, SearchViewActivity.class);
-            intent.putExtra("collapse", false);
-            startActivity(intent);
-        } else if (id == R.id.menu_refresh) {
-            Toast.makeText(this, "当前刷新时间: " +
-                    Utils.getNowDateTime("yyyy-MM-dd HH:mm:ss"), Toast.LENGTH_LONG).show();
-            return true;
-        } else if (id == R.id.menu_about) {
-            Toast.makeText(this, "这个是商城首页", Toast.LENGTH_LONG).show();
-            return true;
-        } else if (id == R.id.menu_quit) {
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
 }
+
+
+

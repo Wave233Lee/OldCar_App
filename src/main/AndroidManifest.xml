@@ -28,6 +28,12 @@
         <activity android:name=".OldcarCarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarSaleActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".SearchResultActvity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".SearchResult1Activity" android:theme="@style/AppCompatTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
         <activity android:name=".widget.View1Activity"/>
         <activity android:name=".widget.AdvActivity"/>
         <activity android:name=".widget.AccessoryActivity"/>
@@ -41,6 +47,12 @@
         <activity android:name=".widget.RentCarActivity"/>
         <activity android:name=".widget.LightSystemActivity"/>
         <activity android:name=".widget.LightDetailActivity"/>
+        <activity android:name=".widget.PeripheryActivity"/>
+        <activity android:name=".widget.CarClubActivity"/>
+        <activity android:name=".widget.ClubActivity"/>
+        <activity android:name=".widget.FinancialActivity"/>
+        <activity android:name=".widget.LoginActivity"/>
+        <activity android:name=".widget.ChatActivity"/>
         <activity android:name=".widget.ReleaseActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.HomeCarShow" />
         <activity android:name=".widget.Text" android:theme="@style/AppCompatTheme">

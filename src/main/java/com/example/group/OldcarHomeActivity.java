@@ -1,7 +1,6 @@
 package com.example.group;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import android.app.SearchManager;
 import android.app.SearchableInfo;
@@ -20,10 +19,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -36,69 +31,27 @@ import com.example.group.bean.GoodsInfo;
 import com.example.group.util.DisplayUtil;
 import com.example.group.util.Utils;
 import com.example.group.widget.BannerPager;
-import com.example.group.widget.CarActivity;
 import com.example.group.widget.SpacesItemDecoration;
 import com.example.group.widget.BannerPager.BannerClickListener;
-import com.sunfusheng.marqueeview.MarqueeView;
 
-public class OldcarHomeActivity extends AppCompatActivity implements BannerClickListener, View.OnClickListener {
+public class OldcarHomeActivity extends AppCompatActivity implements BannerClickListener  {
 	private final static String TAG = "OldcarHomeActivity";
-	private Button bt1;
-	private Button bt2;
-	private Button bt3;
-	private Button bt4;
-	private Button bt5;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_oldcar_home);
 		Toolbar tl_head = (Toolbar) findViewById(R.id.tl_head);
-		tl_head.setTitle(" ");
+		tl_head.setTitle("老爷车");
 		setSupportActionBar(tl_head);
 		initBanner();
 		initGrid();
-		bt1=findViewById(R.id.bt1);
-		bt2=findViewById(R.id.bt2);
-		bt3=findViewById(R.id.bt3);
-		bt4=findViewById(R.id.bt4);
-		bt5=findViewById(R.id.bt5);
-		bt1.setOnClickListener(this);
-		bt2.setOnClickListener(this);
-		bt3.setOnClickListener(this);
-		bt4.setOnClickListener(this);
-		bt5.setOnClickListener(this);
-		MarqueeView marqueeView = (MarqueeView) findViewById(R.id.marqueeView);
-		List<String> info = new ArrayList<>();
-		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
-		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
-		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
-		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
-		info.add("老车咨询  珠海虎头奔三周年颁奖盛典");
-		marqueeView.startWithList(info);
-		marqueeView.startWithList(info, R.anim.anim_bottom_in, R.anim.anim_top_out);
-		marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
-			@Override
-			public void onItemClick(int position, TextView textView) {
-
-			}
-		});
 		initCombine();
 		initCombine1();
 	}
-<<<<<<< HEAD
-
-	@Override
-	public void onClick(View v) {
-		Intent intent=new Intent(this, CarActivity.class);
-		startActivity(intent);
-	}
-
-=======
 	private void initSearchView(Menu menu) {
 		MenuItem menuItem = menu.findItem(R.id.menu_search);
 		SearchView searchView = (SearchView) menuItem.getActionView();
-	//	SearchView.setIconifiedByDefault(getIntent().getBooleanExtra("collapse",true));
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 		ComponentName cn = new ComponentName(this, SearchResult1Activity.class);
 //		Intent intent = new Intent();
@@ -182,7 +135,6 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 		}
 		return super.onOptionsItemSelected(item);
 	}
->>>>>>> 9e388d3
 	private void initBanner() {
 		BannerPager banner = (BannerPager) findViewById(R.id.banner_pager);
 		LayoutParams params = (LayoutParams) banner.getLayoutParams();
@@ -202,8 +154,8 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 
 	@Override
 	public void onBannerClick(int position) {
-		Intent intent=new Intent(this, CarActivity.class);
-		startActivity(intent);
+		String desc = String.format("您点击了第%d张图片", position+1);
+		Toast.makeText(this, desc, Toast.LENGTH_LONG).show();
 	}
 
 	private void initGrid() {
@@ -260,30 +212,6 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 		rv_combine.addItemDecoration(new SpacesItemDecoration(1));
 	}
 
-<<<<<<< HEAD
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == android.R.id.home) {
-			finish();
-		} else if (id == R.id.menu_search) {
-			Intent intent = new Intent(this, SearchViewActivity.class);
-			intent.putExtra("collapse", false);
-			startActivity(intent);
-		} else if (id == R.id.menu_refresh) {
-			Toast.makeText(this, "当前刷新时间: "+
-					Utils.getNowDateTime("yyyy-MM-dd HH:mm:ss"), Toast.LENGTH_LONG).show();
-			return true;
-		} else if (id == R.id.menu_about) {
-			Toast.makeText(this, "这个是商城首页", Toast.LENGTH_LONG).show();
-			return true;
-		} else if (id == R.id.menu_quit) {
-			finish();
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-=======
 //	@Override
 //	public boolean onMenuOpened(int featureId, Menu menu) {
 //		// 显示菜单项左侧的图标
@@ -318,5 +246,4 @@ public class OldcarHomeActivity extends AppCompatActivity implements BannerClick
 //		}
 //		return super.onOptionsItemSelected(item);
 //	}
->>>>>>> 9e388d3
 }

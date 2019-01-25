@@ -32,7 +32,7 @@
         <activity android:name=".widget.View1Activity"/>
         <activity android:name=".widget.AdvActivity"/>
         <activity android:name=".widget.AccessoryActivity"/>
-        <activity android:name=".widget.CarActivity"/>
+        <activity android:name=".widget.CarActivity" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.CreditActivity"/>
         <activity android:name=".widget.ImportCarActivity"/>
         <activity android:name=".widget.ArticleActivity"/>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#bbffbb"
+    android:background="@drawable/gradient1"
     android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
@@ -29,30 +29,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:background="@null"
                 android:text="1900年底" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:background="@null"
                 android:text="1901-1910" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:background="@null"
                 android:text="1911-1920" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:background="@null"
                 android:text="1921-1930" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
+                android:background="@null"
                 android:text="1931-1940" />
         </LinearLayout>
     </HorizontalScrollView>

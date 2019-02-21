@@ -23,8 +23,8 @@ public class Planet {
 
     private static int[] iconArray = {R.drawable.shuixing, R.drawable.jinxing, R.drawable.diqiu,
             R.drawable.huoxing, R.drawable.muxing, R.drawable.tuxing};
-    private static String[] nameArray = {"水星", "金星", "地球", "火星", "木星", "土星"};
-    private static String[] descArray = {
+    private static String[] descArray = {"315 评论", "315 评论", "315 评论", "315 评论", "315 评论", "315 评论"};
+    private static String[] nameArray = {
             "水星是太阳系八大行星最内侧也是最小的一颗行星，也是离太阳最近的行星",
             "金星是太阳系八大行星之一，排行第二，距离太阳0.725天文单位",
             "地球是太阳系八大行星之一，排行第三，也是太阳系中直径、质量和密度最大的类地行星，距离太阳1.5亿公里",

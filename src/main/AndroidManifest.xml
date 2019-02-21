@@ -46,7 +46,7 @@
         <activity android:name=".widget.Activity_setup"/>
         <activity android:name=".widget.FocusActivity" android:launchMode="standard"/>
         <activity android:name=".widget.ReleaseActivity" android:theme="@style/AppCompatTheme"/>
-        <activity android:name=".widget.HomeCarShow" />
+        <activity android:name=".widget.HomeCarShow" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.Text" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.HomeCarCulture" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.Video" android:theme="@style/AppCompatTheme"/>

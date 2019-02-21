@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
@@ -39,6 +40,15 @@ public class HomeCarCulture extends AppCompatActivity implements BannerPager.Ban
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oldcar_home_carculture);
+        Toolbar tl_head = (Toolbar) findViewById(R.id.tl_head);
+        tl_head.setTitle("");
+        setSupportActionBar(tl_head);
+        tl_head.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         initBanner();
         initViews();
     }

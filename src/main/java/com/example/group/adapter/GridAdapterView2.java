@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.group.OldcarHomeActivity;
 import com.example.group.R;
 import com.example.group.bean.GoodsInfo;
 import com.example.group.widget.RecyclerExtras.OnItemClickListener;

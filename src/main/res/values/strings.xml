@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name"> </string>
+    
+    <string name="menu_first">首页</string>
+    <string name="menu_second">找车</string>
+    <string name="menu_third">老爷车</string>
+    <string name="menu_four">卖车</string>
+    <string name="menu_five">我的</string>
+    <string name="please_input">请输入</string>
+    <string name="search">搜索</string>
+    <string name="avatar">DefaultAvatar</string>
+    <string name="text_view">TextView</string>
+    <string name="image_view">ImageView</string>
+    <string name="blank"> </string>
+    <string name="default_name">admin</string>
+    <string name="default_number">0</string>
+    
+</resources>

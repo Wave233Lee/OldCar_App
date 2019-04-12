@@ -21,13 +21,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SearchViewActivity" android:theme="@style/AppCompatTheme" />
-        <activity android:name=".OldcarHomeActivity" android:theme="@style/AppCompatTheme" />
+        <activity android:name=".SearchViewActivity" android:theme="@style/AppCompatTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name=".OldcarHomeActivity" android:theme="@style/AppCompatTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
         <activity android:name=".OldcarFindcarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".FindCarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarCarActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarSaleActivity" android:theme="@style/AppCompatTheme" />
-        <activity android:name=".SearchResultActvity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".OldcarMyselfActivity" android:theme="@style/AppCompatTheme" />
         <activity android:name=".widget.View1Activity"/>
         <activity android:name=".widget.AdvActivity"/>
@@ -59,6 +58,12 @@
         <activity android:name=".widget.AddCar"/>
         <activity android:name=".widget.CloseMaintenance" android:theme="@style/AppCompatTheme"/>
         <activity android:name=".widget.OriginalMaintenance" android:theme="@style/AppCompatTheme"/>
+        <activity android:name=".SearchResultActvity" android:theme="@style/AppCompatTheme" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
 
     </application>
 

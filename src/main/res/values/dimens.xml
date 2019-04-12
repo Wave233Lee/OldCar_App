@@ -4,5 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     
     <dimen name="tabbar_height">60dp</dimen>
-    
+
+    <dimen name="btnTextSize">13sp</dimen>
+
 </resources>

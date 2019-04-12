@@ -30,6 +30,8 @@ import com.example.group.bean.GoodsInfoView1;
 import com.example.group.util.HttpCallbackListener;
 import com.example.group.util.HttpUtil;
 import com.example.group.widget.CarActivity;
+import com.example.group.widget.HomeCarShow;
+import com.example.group.widget.ImageTextButton;
 import com.example.group.widget.SpacesItemDecoration;
 
 import org.json.JSONArray;
@@ -50,6 +52,7 @@ public class View1Frangment extends Fragment implements AdapterView.OnItemClickL
     private ArrayList<GoodInfo1> birdList;
     private DataAdapter adapter1;
     private String imageUrls[]=new String[9];
+    ImageTextButton bt1;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
         mContext=getActivity();
@@ -67,11 +70,16 @@ public class View1Frangment extends Fragment implements AdapterView.OnItemClickL
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new SpacesItemDecoration(50));
 
-        gridView=(GridView) mView.findViewById(R.id.gridView);
-        dataList=new ArrayList<Map<String,Object>>();
-        adapter=new SimpleAdapter(this.mContext, getData(), R.layout.item_view1, new String[]{"pic","name"}, new int[]{R.id.pic,R.id.name});
-        gridView.setAdapter(adapter);
-        gridView.setOnItemClickListener(this);
+        bt1 = (ImageTextButton)mView.findViewById(R.id.bt1);
+        bt1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent=new Intent(mContext, CarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return mView;
     }

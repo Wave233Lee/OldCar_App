@@ -165,7 +165,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray1 = {"北京", "上海", "湖南", "深圳", "云南", "广州"};
     class MySelectedListener1 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray1[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -175,7 +174,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray2 = {"长沙", "怀化"};
     class MySelectedListener2 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray2[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -185,7 +183,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray3 = {"一区","二区","三区"};
     class MySelectedListener3 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray3[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -195,7 +192,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray4 = {"室内", "室外"};
     class MySelectedListener4 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray4[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -205,7 +201,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray5 = {"红旗", "奔驰","丰田","林肯"};
     class MySelectedListener5 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray5[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -215,7 +210,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray6 = {"2018", "2019","2020","2021"};
     class MySelectedListener6 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是" + starArray6[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -225,7 +219,7 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
     private String[] starArray7 = {"1", "2","3","4","5","6","7","8","9","10","11","12"};
     class MySelectedListener7 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray7[arg2], Toast.LENGTH_LONG).show();
+
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -237,7 +231,6 @@ public class View2Fragment extends Fragment implements AdapterView.OnItemClickLi
             "21","22","23","24","25","26","27","28","29","30","31"};
     class MySelectedListener8 implements AdapterView.OnItemSelectedListener {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(mContext, "您选择的是"+starArray8[arg2], Toast.LENGTH_LONG).show();
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
